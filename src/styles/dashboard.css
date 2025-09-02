@@ -1,0 +1,55 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.shop-items, .cartItems-display {
+    display: grid;
+    grid-template-columns: repeat(5, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+.cartItems-display h1 {
+    text-align: center;
+    display: block;
+    position: fix;
+}
+
+@media (max-width: 960px) {
+    .shop-items {
+        grid-template-columns: repeat(2, minmax(150px, 1fr));
+    }
+}
+
+.shop-items div {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 16px;
+    text-align: center;
+}
+
+.cartItems-display div {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 16px;
+    text-align: center;
+}
+
+.delete-btn:hover {
+    border-color: red;
+}
+
+.deleteAll-btn{ 
+    margin: 12px;
+}
+
+.deleteAll-btn:hover {
+    border-color: red;
+}
+
+button:hover {
+    cursor: pointer;
+    background-color: rgb(68, 73, 76);
+    border-color: rgb(41, 189, 33);
+}
