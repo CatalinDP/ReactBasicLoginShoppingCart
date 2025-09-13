@@ -1,8 +1,11 @@
 import { useState } from "react";
-
 import { useNavigate } from "react-router-dom";
+import { useLoggedUsers } from "../hooks/useLoggedUsers";
+import { useUsers } from "../hooks/useUsers";
 
-export function LogIn({ users, onLogin }) {
+export function LogIn() {
+  const {setLogIn} = useLoggedUsers()
+  const {users} = useUsers()
   const [username, setUsername] = useState('')
   const [password, setPassword] = useState('')
 
@@ -11,7 +14,7 @@ export function LogIn({ users, onLogin }) {
     const userFound = users.find((u) => u.name === username && u.password === password)
     if (userFound) {
       const login = true;
-      onLogin(login)
+      setLogIn(login)
       navigate("/dashboard")
       window.localStorage.setItem('logState', JSON.stringify(login))
       window.localStorage.setItem('userCredentials', JSON.stringify({ user: username, password: password }))
@@ -20,7 +23,6 @@ export function LogIn({ users, onLogin }) {
       setUsername("")
       setPassword("")
     }
-
   }
 
   return (

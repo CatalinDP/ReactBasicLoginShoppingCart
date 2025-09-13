@@ -1,19 +1,21 @@
 import { useState } from "react"
 import { useNavigate } from "react-router-dom"
+import { useUsers } from "../hooks/useUsers"
+import { useId } from "react"
 
-export function Register({setUsers, users}) {
+export function Register() {
+    const {users, setUsers} = useUsers()
     const [username, setUsername] = useState('')
     const [password, setPassword] = useState('')
     const [passwordConfirm, setPasswordConfirm] = useState('')
     const navigate = useNavigate()
+    const userId = useId()
 
     const registerUser = () => {
         if (password === passwordConfirm) {
             const existName = users.find(u => u.name === username)
             if (!existName) {
-                const lastUser = users.length > 0 ? users[users.length - 1] : 1
-                const id = lastUser.id + 1;
-                const newUsersList = [...users, {id: id, name: username, password: password}]
+                const newUsersList = [...users, {id: userId, name: username, password: password}]
                 setUsers(newUsersList)
                 window.localStorage.setItem('users', JSON.stringify(newUsersList))
                 navigate("/")

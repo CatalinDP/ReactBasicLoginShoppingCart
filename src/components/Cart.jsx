@@ -1,32 +1,26 @@
-import { useState } from "react";
+import { useCart } from "../hooks/useCart"
 
-export function ShoppingCart() {
-    const [cart, setCart] = useState([])
+export function Cart() {
+    const { cart, removeFromCart } = useCart()
+    let total = cart.reduce((acc, item) => acc + item.precio * item.cantidad, 0)
 
-    const addItem = (item) => {
-        setCart(() => {
-            const index = cart.findIndex((u) => u.id === item.id)
-            if (index !== -1) {
-                const newItem = [...cart]
-                newItem[index] = {...newItem[index], cantidad: newItem[index].cantidad + 1}
-                return newItem
-            }
-            const newItem = [...cart, {...item, cantidad: item.cantidad + 1}]
-            return newItem
-        })
-    }
-
-    const delItem = (item) => {
-        const newCart = cart.map(cartItem => cartItem.id === item.id ? {...item, cantidad: item.cantidad - 1 } : cartItem)
-                .filter(itemF => itemF.cantidad > 0)
-            console.log("newCART", newCart)
-            setCart(newCart)
-        
-    }
-
-    const delAllItems = () => {
-        setCart([])
-    }
-
-    return {addItem, delItem, cart, delAllItems}
+    return (
+        <>
+            <span>
+                <h1>Shopping cart</h1>
+            </span>
+            <section className="cartItems-display">
+                {
+                    cart.map((item) => {
+                        return (
+                            <div key={item.id}>
+                                <p>{item.nombre} --- {item.precio} -- {item.cantidad}</p><button type="button" className="delete-btn" onClick={() => { removeFromCart(item) }}>Delete from cart</button>
+                            </div>
+                        )
+                    }) 
+                }
+            </section>
+            <span><h4>Coste total {total.toFixed(2)}€</h4></span>
+        </>
+    )
 }
