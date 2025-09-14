@@ -1,7 +1,7 @@
 import { useState } from "react"
 import { useCart } from "../hooks/useCart"
 import { Cart } from "./Cart"
-import {products as initialProducts} from "../mocks/products.json"
+import { products as initialProducts} from "../mocks/products.json"
 import { useFilters } from "../hooks/useFilters"
 
 export function Shop() {
@@ -13,6 +13,7 @@ export function Shop() {
 
     return (
         <>
+            <Cart/>
             <section className="shop-items" >
                     {
                         filteredProducts.map((item) => {
@@ -24,8 +25,8 @@ export function Shop() {
                         })
                     }
             </section>
-            <Cart/>
-            <span><button className="deleteAll-btn" type="button" onClick={clearCart}>Delete All</button></span>
+            {/*Cambiar el botton de lugar*/}
+            <span><button className="deleteAll-btn" type="button" onClick={clearCart}>Delete All</button></span> 
         </>
     )
 }

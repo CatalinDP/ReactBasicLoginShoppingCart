@@ -3,7 +3,6 @@ import { useFilters } from "../hooks/useFilters"
 
 export function Footer() {
     const { filters } = useFilters()
-    console.log(filters)
     return (
         <div className="footer">
             <h4>

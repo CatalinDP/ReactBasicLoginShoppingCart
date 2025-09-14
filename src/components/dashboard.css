@@ -4,16 +4,16 @@ body {
     padding: 0;
 }
 
-.shop-items, .cartItems-display {
+.shop-items {
     display: grid;
     grid-template-columns: repeat(5, minmax(200px, 1fr));
     gap: 20px;
 }
 
-.cartItems-display h1 {
-    text-align: center;
-    display: block;
-    position: fix;
+@media (max-width: 1360px) {
+    .shop-items {
+        grid-template-columns: repeat(3, minmax(150px, 1fr));
+    }
 }
 
 @media (max-width: 960px) {
@@ -23,13 +23,6 @@ body {
 }
 
 .shop-items div {
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    padding: 16px;
-    text-align: center;
-}
-
-.cartItems-display div {
     border: 1px solid #ccc;
     border-radius: 8px;
     padding: 16px;

@@ -1,5 +1,5 @@
-import { Shop } from './shop'
-import '../styles/dashboard.css'
+import { Shop } from './Shop'
+import './dashboard.css'
 import { useCurrentUser } from '../hooks/useCurrentUser';
 import { useLoggedUsers } from '../hooks/useLoggedUsers';
 import { useNavigate } from 'react-router-dom';
