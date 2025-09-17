@@ -1,37 +1,23 @@
-import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useLoggedUsers } from "../hooks/useLoggedUsers";
-import { useUsers } from "../hooks/useUsers";
+import { useEffect } from "react";
 
 export function LogIn() {
-  const {setLogIn} = useLoggedUsers()
-  const {users} = useUsers()
-  const [username, setUsername] = useState('')
-  const [password, setPassword] = useState('')
-
   const navigate = useNavigate()
-  const logInUser = () => {
-    const userFound = users.find((u) => u.name === username && u.password === password)
-    if (userFound) {
-      const login = true;
-      setLogIn(login)
-      navigate("/dashboard")
-      window.localStorage.setItem('logState', JSON.stringify(login))
-      window.localStorage.setItem('userCredentials', JSON.stringify({ user: username, password: password }))
-    } else {
-      alert('Error en las credenciales, intentalo de nuevo')
-      setUsername("")
-      setPassword("")
-    }
-  }
+  const { logInUser, loginData, setLoginData, isLoggedIn } = useLoggedUsers()
+
+  useEffect(()=> {
+    if (isLoggedIn) return navigate("/dashboard")
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [])
 
   return (
     <main>
       <form>
         <h1>Login</h1>
-        <input type="text" placeholder="Username" value={username} onChange={e => { setUsername(e.target.value) }}></input>
-        <input type="password" placeholder="Password" value={password} onChange={e => { setPassword(e.target.value) }}></input>
-        <button type="button" onClick={logInUser} className="general-btns">Log In</button>
+        <input type="text" placeholder="Username" value={loginData.username} onChange={e => { setLoginData({...loginData, name: e.target.value}) }}></input>
+        <input type="password" placeholder="Password" value={loginData.password} onChange={e => { setLoginData({...loginData, password: e.target.value}) }}></input>
+        <button type="button" onClick={() => {if (logInUser()) return navigate("/dashboard")}  } className="general-btns">Log In</button>
       </form>
       <button type="button" onClick={() => navigate("/register")} className="general-btns">Register</button>
     </main>

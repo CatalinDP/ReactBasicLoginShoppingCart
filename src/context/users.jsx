@@ -4,10 +4,10 @@
 
     export function UsersProvider ( {children}) {
         const [users, setUsers] = useState(() => {
-        const usersFromStorage = window.localStorage.getItem('users')
-        const usersParsed = JSON.parse(usersFromStorage)
-        if (usersParsed) return usersParsed
-        return [{ id: 1, name: 'Carlos', password: '1234' }]
+            const usersFromStorage = window.localStorage.getItem('users')
+            const usersParsed = JSON.parse(usersFromStorage)
+            if (usersParsed) return usersParsed
+            return {}
     })
 
     return (

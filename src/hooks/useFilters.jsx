@@ -2,11 +2,13 @@ import { useContext } from "react";
 import { FiltersContext } from "../context/filters";
 
 export function useFilters() {
-    const {filters, setFilters} = useContext(FiltersContext)
+    const filterContext = useContext(FiltersContext)
 
-    if (filters === undefined || setFilters === undefined) {
+    if (filterContext === undefined) {
         throw new Error('Filters context must be used within a Filters provider')
     }
+
+    const {filters, setFilters} = filterContext
 
     function filterProducts(products) {
         return products.filter(

@@ -5,15 +5,18 @@ import { BrowserRouter } from 'react-router-dom'
 import { UsersProvider } from './context/users.jsx'
 import { LoggedUserProvider } from './context/isUserLogged.jsx'
 import { FiltersProvider } from './context/filters.jsx'
+import { StrictMode } from 'react'
 
 createRoot(document.getElementById('root')).render(
-  <UsersProvider>
-    <LoggedUserProvider>
-      <FiltersProvider>
-        <BrowserRouter>
-          <App />
-        </BrowserRouter>
-      </FiltersProvider>
-    </LoggedUserProvider>
-  </UsersProvider>
+  <StrictMode>
+    <UsersProvider>
+      <LoggedUserProvider>
+        <FiltersProvider>
+          <BrowserRouter>
+            <App />
+          </BrowserRouter>
+        </FiltersProvider>
+      </LoggedUserProvider>
+    </UsersProvider>
+  </StrictMode>
 )

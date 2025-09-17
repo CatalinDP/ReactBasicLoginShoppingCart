@@ -1,16 +1,14 @@
-export const cartInitialState = JSON.parse(window.localStorage.getItem('cart')) || []
-
 export const CART_ACTION_TYPES = {
     ADD_TO_CART: 'ADD_TO_CART',
     REMOVE_FROM_CART: 'REMOVE_FROM_CART',
     CLEAR_CART: 'CLEAR_CART',
+    SET_CART: 'SET_CART'
 }
 
-const updateLocalStorage = (state) => {
-    window.localStorage.setItem('cart', JSON.stringify(state))
-}
+
 
 export const cartReducer = (state, action) => {
+
     const { type: actionType, payload: actionPayload} = action
     switch (actionType) {
         case CART_ACTION_TYPES.ADD_TO_CART: {
@@ -27,7 +25,6 @@ export const cartReducer = (state, action) => {
                     }
                     return item
                 })
-                updateLocalStorage(newState)
                 return newState
             }
             const newState = [
@@ -43,13 +40,15 @@ export const cartReducer = (state, action) => {
                     {...item, cantidad: item.cantidad - 1}
                     : item
             }).filter(item => item.cantidad >= 1)
-            updateLocalStorage(newState)
             return newState
         }
 
         case CART_ACTION_TYPES.CLEAR_CART: {
-            updateLocalStorage([])
             return []
+        }
+
+        case CART_ACTION_TYPES.SET_CART: {
+            return actionPayload
         }
     }
     return state
