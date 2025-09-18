@@ -1,22 +1,16 @@
-import { useState } from "react"
 import { useCart } from "../hooks/useCart"
 import { Cart } from "./Cart"
-import { products as initialProducts} from "../mocks/products.json"
-import { useFilters } from "../hooks/useFilters"
 
 export function Shop() {
 
-    const { addToCart, clearCart} = useCart()
-    const [products] = useState(initialProducts)
-    const {filterProducts} = useFilters()
-    const filteredProducts = filterProducts(products)
+    const { addToCart, clearCart, cart} = useCart()
 
     return (
         <>
             <Cart/>
             <section className="shop-items" >
                     {
-                        filteredProducts.map((item) => {
+                        cart.map((item) => {
                             return (
                             <div key={item.id}>
                                 <p>{item.nombre} --- {item.precio}</p><button type="button" onClick={() => {addToCart(item)}}>Add to cart</button>

@@ -14,9 +14,10 @@ export function useLoggedUsers() {
   const { users } = useUsers()
 
   useEffect(() => {
+    
     const userCredentials = JSON.parse(window.localStorage.getItem('userCredentials'))
     if (isLoggedIn && userCredentials) {
-      const userExist = Object.values(users).some(u => u.name === userCredentials.user && u.password === userCredentials.password)
+      const userExist = users.some(u => u.name === userCredentials.user && u.password === userCredentials.password)
       if (userExist) return setLogIn(true)
       else {
         window.localStorage.removeItem('logState')
@@ -33,7 +34,7 @@ export function useLoggedUsers() {
   const navigate = useNavigate()
 
   const logInUser = () => {
-    const userFound = Object.values(users).find((u) => u.name === loginData.name && u.password === loginData.password)
+    const userFound = users.find((u) => u.name === loginData.name && u.password === loginData.password)
     if (userFound) {
       const login = true;
       setLogIn(login)

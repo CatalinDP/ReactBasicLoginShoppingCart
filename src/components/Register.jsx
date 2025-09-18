@@ -1,10 +1,8 @@
-import { useState } from "react"
 import { useNavigate } from "react-router-dom"
 import { useUsers } from "../hooks/useUsers"
 
 export function Register() {
-    const {registerUser} = useUsers()
-    const [newUser, setNewUser] = useState({username: "", password:"", passwordConfirm: ""})
+    const {registerUser, newUser, setNewUser} = useUsers()
     const navigate = useNavigate()
 
     return (

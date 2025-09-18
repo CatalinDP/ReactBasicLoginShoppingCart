@@ -1,0 +1,94 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "nombre": "Teclado mecánico",
+      "precio": 59.99,
+      "cantidad": 0,
+      "categoria": "Perifericos"
+    },
+    {
+      "id": 2,
+      "nombre": "Ratón inalámbrico",
+      "precio": 24.5,
+      "cantidad": 0,
+      "categoria": "Perifericos"
+    },
+    {
+      "id": 3,
+      "nombre": "Monitor 24'' Full HD",
+      "precio": 149,
+      "cantidad": 0,
+      "categoria": "Perifericos"
+    },
+    {
+      "id": 4,
+      "nombre": "Videojuego GTA",
+      "precio": 59.9,
+      "cantidad": 0,
+      "categoria": "Videojuegos"
+    },
+    {
+      "id": 5,
+      "nombre": "Videojuego Fifa",
+      "precio": 45,
+      "cantidad": 0,
+      "categoria": "Videojuegos"
+    },
+    {
+      "id": 6,
+      "nombre": "Disco SSD 1TB",
+      "precio": 89.99,
+      "cantidad": 0,
+      "categoria": "Hardware"
+    },
+    {
+      "id": 7,
+      "nombre": "Tarjeta gráfica",
+      "precio": 199,
+      "cantidad": 0,
+      "categoria": "Hardware"
+    },
+    {
+      "id": 8,
+      "nombre": "Procesador",
+      "precio": 80.75,
+      "cantidad": 0,
+      "categoria": "Hardware"
+    },
+    {
+      "id": 9,
+      "nombre": "Videojuego LoL",
+      "precio": 1,
+      "cantidad": 0,
+      "categoria": "Videojuegos"
+    },
+    {
+      "id": 10,
+      "nombre": "Hub USB-C",
+      "precio": 29.99,
+      "cantidad": 0,
+      "categoria": "Hardware"
+    }
+  ],
+  "users": [
+    {
+      "id": 1,
+      "name": "Carlos",
+      "password": "123",
+      "cart": []
+    },
+    {
+      "id": 2,
+      "name": "Cat",
+      "password": "123",
+      "cart": []
+    },
+    {
+      "id": 3,
+      "name": "Cat2",
+      "password": "123",
+      "cart": []
+    }
+  ]
+}
