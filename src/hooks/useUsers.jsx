@@ -11,6 +11,7 @@ export function useUsers() {
 
     const {users, newUser, setNewUser, loadUsers} = usersContext
 
+
     const registerUser = (password, passwordConfirm, username) => {
         if (password === passwordConfirm) {
             const id = users.length + 1
@@ -21,5 +22,5 @@ export function useUsers() {
     }
 
 
-    return {users, newUser, setNewUser, registerUser}
+    return {users, newUser, setNewUser, registerUser, loadUsers}
 }

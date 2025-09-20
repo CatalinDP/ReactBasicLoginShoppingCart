@@ -1,27 +1,32 @@
-import { useCart } from "../hooks/useCart"
 import { Cart } from "./Cart"
 import { useProducts } from "../hooks/useProducts"
+import { useCurrentUser } from "../hooks/useCurrentUser"
+import { useCart } from "../hooks/useCart"
+import { useFilters } from "../hooks/useFilters"
 
 export function Shop() {
-
-    const { addToCart, clearCart} = useCart()
     const { products } = useProducts()
+    const {currentUser} = useCurrentUser()
+    const { addNewItemToCart, deleteAllFromCart } = useCart()
+    const { filterProducts } = useFilters()
+    const filteredProducts = filterProducts(products)
+
     return (
         <>
             <Cart/>
             <section className="shop-items" >
                     {
-                        products.map((item) => {
+                        filteredProducts.map((item) => {
                             return (
                             <div key={item.id}>
-                                <p>{item.nombre} --- {item.precio}</p><button type="button" onClick={() => {addToCart(item)}}>Add to cart</button>
+                                <p>{item.nombre} --- {item.precio}</p><button type="button" onClick={() => {addNewItemToCart(currentUser.id, item)}}>Add to cart</button>
                             </div>
                             )
                         })
                     }
             </section>
             {/*Cambiar el botton de lugar*/}
-            <span><button className="deleteAll-btn" type="button" onClick={clearCart}>Delete All</button></span> 
+            <span><button className="deleteAll-btn" type="button" onClick={() => deleteAllFromCart(currentUser.id)}>Delete All</button></span> 
         </>
     )
 }

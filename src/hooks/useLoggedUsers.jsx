@@ -11,7 +11,7 @@ export function useLoggedUsers() {
   }
 
   const { isLoggedIn, setLogIn, userLogout, setUserLogout } = logContext
-  const { users } = useUsers()
+  const { users, loadUsers } = useUsers()
 
   useEffect(() => {
     
@@ -34,6 +34,8 @@ export function useLoggedUsers() {
   const navigate = useNavigate()
 
   const logInUser = () => {
+    console.log("users -->>", users)
+    loadUsers()
     const userFound = users.find((u) => u.name === loginData.name && u.password === loginData.password)
     if (userFound) {
       const login = true;

@@ -12,5 +12,5 @@ export function useProducts () {
         loadProducts()
     }, [])
 
-    return { products}
+    return { products }
 }

@@ -12,14 +12,12 @@ export function UsersProvider({ children }) {
         try {
             const data = await getUsers()
             setUsers(data)
-            console.log("Usuarios cargados: ", data)
         } catch (err) {
             console.error(err)
         }
     }
 
     useEffect(() => {
-
         loadUsers()
     }, [])
 

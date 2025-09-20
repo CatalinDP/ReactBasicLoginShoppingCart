@@ -3,11 +3,11 @@ import "./Cart.css"
 import { useId } from "react"
 import { useCurrentUser } from "../hooks/useCurrentUser"
 
+
 export function Cart() {
-    const { cart, removeFromCart } = useCart()
-    const { currentUser } = useCurrentUser()
-    console.log('current user', currentUser)
-    console.log('Cart: ', cart)
+    const { cart, deleteItemFromCart} = useCart()
+    const  {currentUser} = useCurrentUser()
+
     let total = cart.reduce((acc, item) => acc + item.precio * item.cantidad, 0)
     const cartButtonCheckedId = useId()
     return (
@@ -21,7 +21,7 @@ export function Cart() {
                     cart.map((item) => {
                         return (
                             <div key={item.id}>
-                                <p>{item.nombre} | {item.precio}€ | Cantidad: {item.cantidad}</p><button type="button" className="delete-btn" onClick={() => { removeFromCart(item) }}>Delete from cart</button>
+                                <p>{item.nombre} | {item.precio}€ | Cantidad: {item.cantidad}</p><button type="button" className="delete-btn" onClick={() => { deleteItemFromCart(currentUser.id, item) }}>Delete from cart</button>
                             </div>
                         )
                     })
