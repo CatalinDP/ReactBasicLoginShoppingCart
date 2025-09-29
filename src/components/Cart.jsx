@@ -1,11 +1,11 @@
-import { useCart } from "../hooks/useCart"
+import { useCart } from "../hooks/useCart.js"
 import "./Cart.css"
 import { useId } from "react"
-import { useCurrentUser } from "../hooks/useCurrentUser"
+import { useCurrentUser } from "../hooks/useCurrentUser.js"
 
 
 export function Cart() {
-    const { cart, deleteItemFromCart} = useCart()
+    const { cart, deleteItemFromCart, deleteAllFromCart} = useCart()
     const  {currentUser} = useCurrentUser()
 
     let total = cart.reduce((acc, item) => acc + item.precio * item.cantidad, 0)
@@ -26,6 +26,7 @@ export function Cart() {
                         )
                     })
                 }
+                <span><button className="deleteAll-btn" type="button" onClick={() => deleteAllFromCart(currentUser.id)}>Delete All</button></span> 
             </section>
         </>
     )

@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom"
-import { useUsers } from "../hooks/useUsers"
+import { useUsers } from "../hooks/useUsers.js"
 
 export function Register() {
     const {registerUser, newUser, setNewUser} = useUsers()

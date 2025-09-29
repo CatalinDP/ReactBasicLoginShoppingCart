@@ -11,12 +11,12 @@ export function Dashboard() {
     let name = "";
     if (currentUser) name = currentUser.name
     return (
-        <main>
+        <section className='dashboard'>
             <h1>Bienvenido {name}</h1>
             <button type='button' onClick={() => {logOut(); }} className='general-btns'>Log out</button>
             <Header/>
                 <Shop/>
             <Footer/>
-        </main>
+        </section>
     )
 }

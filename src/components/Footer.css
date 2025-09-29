@@ -2,10 +2,23 @@
     position: fixed;
     bottom: 2%;
     left: 2%;
-    background-color: black;
-    width: 12rem;
+    background-color: rgb(83, 158, 255);
+    width: 14rem;
     height: 4rem;
     display: flex;
-    text-align: center;
     justify-content: center;
+    border-radius: 20%;
+    outline: 1px solid white;
+    color: gold;
+    transition: 300ms ease-in-out;
+    cursor: crosshair;
+}
+
+.footer h4 {
+    text-align: center;
+    text-shadow: 2px 2px 5px black;
+} 
+.footer:hover {
+    background-color: rgb(184, 158, 11);
+    color: rgba(255, 0, 0, 0.918);
 }

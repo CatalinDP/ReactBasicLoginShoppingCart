@@ -1,13 +1,14 @@
 import { Cart } from "./Cart"
-import { useProducts } from "../hooks/useProducts"
-import { useCurrentUser } from "../hooks/useCurrentUser"
-import { useCart } from "../hooks/useCart"
-import { useFilters } from "../hooks/useFilters"
+import { useProducts } from "../hooks/useProducts.js"
+import { useCurrentUser } from "../hooks/useCurrentUser.js"
+import { useCart } from "../hooks/useCart.js"
+import { useFilters } from "../hooks/useFilters.js"
+import './dashboard.css'
 
 export function Shop() {
     const { products } = useProducts()
     const {currentUser} = useCurrentUser()
-    const { addNewItemToCart, deleteAllFromCart } = useCart()
+    const { addNewItemToCart } = useCart()
     const { filterProducts } = useFilters()
     const filteredProducts = filterProducts(products)
 
@@ -26,7 +27,7 @@ export function Shop() {
                     }
             </section>
             {/*Cambiar el botton de lugar*/}
-            <span><button className="deleteAll-btn" type="button" onClick={() => deleteAllFromCart(currentUser.id)}>Delete All</button></span> 
+            
         </>
     )
 }
