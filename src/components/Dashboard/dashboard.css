@@ -1,0 +1,95 @@
+
+.dashboard { 
+    color: white; 
+    line-height: 1.6;
+    min-width: 100%; 
+    color: var(--color-text-light);
+    padding: 6rem;
+}
+
+.dashboard > div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 16px;
+}
+
+.dashboard h1 {
+    text-align: center; 
+    margin: 20px;
+    font-size: 2.5rem;
+}
+
+.dashboard button {
+    width: 6rem;
+    height: 2rem;
+    border-radius: 8px;
+    font-weight: bold;
+    background-color: var(--color-secondary-dark);
+    color: white;
+    border: 1px solid white;
+    transition: 300ms ease-in-out;
+}
+
+.dashboard button:hover {
+  cursor: pointer;
+  background-color: var(--color-primary);
+  color: white;
+  border: 1px solid white;
+}
+
+.filters {
+    display: flex; 
+    flex-direction: column;
+    justify-content: space-between; 
+    margin-bottom: 20px;
+    justify-content: center;
+    align-items: center;
+}
+
+.shop-items {
+    display: grid; 
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); 
+    gap: 16px;
+}
+
+.shop-items div {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--color-dark-card);
+    border-radius: 8px;
+    padding: 20px;  
+    min-height: 12rem;
+    outline: 2px solid white;
+}
+
+.shop-items div p {
+    color: var(--color-text-light);
+    font-size: 1.2rem;
+    font-weight: 500;
+    margin-top: 2rem;
+    text-align: center;
+}
+
+.shop-items button {
+    width: 6rem;
+    height: 2rem;
+    border-radius: 8px;
+    font-weight: bold;
+    background-color: var(--color-secondary-dark);
+    color: white;
+    border: 1px solid white;
+    transition: 300ms ease-in-out;
+    margin-top: auto;
+}
+
+.shop-items button:hover {
+  cursor: pointer;
+  background-color: var(--color-primary);
+  color: white;
+  border: 1px solid white;
+}

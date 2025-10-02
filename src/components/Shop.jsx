@@ -3,7 +3,6 @@ import { useProducts } from "../hooks/useProducts.js"
 import { useCurrentUser } from "../hooks/useCurrentUser.js"
 import { useCart } from "../hooks/useCart.js"
 import { useFilters } from "../hooks/useFilters.js"
-import './dashboard.css'
 
 export function Shop() {
     const { products } = useProducts()

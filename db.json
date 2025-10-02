@@ -124,6 +124,18 @@
       "name": "Cat3",
       "password": "123",
       "cart": []
+    },
+    {
+      "id": 5,
+      "name": "Catasdasd",
+      "password": "1234",
+      "cart": []
+    },
+    {
+      "id": 6,
+      "name": "Catasdasd",
+      "password": "1234",
+      "cart": []
     }
   ]
 }

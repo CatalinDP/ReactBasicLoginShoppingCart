@@ -1,7 +1,7 @@
 import { Routes, Route } from 'react-router-dom'
 import './App.css'
 import { LogIn } from './components/LogIn'
-import { Dashboard } from './components/Dashboard'
+import { Dashboard } from './components/Dashboard/Dashboard'
 import { Register } from './components/Register'
 import { CartProvider } from './context/cart'
 import { ProtectedRoute } from './components/ProtectedRoute'
