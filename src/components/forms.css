@@ -7,9 +7,19 @@
 
 body {
   background-image: url("../media/bg-image.jpg");
-  background-size: auto;
+  background-size: center;
   background-position: center;
   align-items: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-color: #1A3A34;
+
+}
+
+@media (max-width: 1300px) {
+  body {
+    background-size: cover;
+  }
 }
 
 .home-forms {

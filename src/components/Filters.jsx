@@ -1,5 +1,6 @@
 import { useId } from "react"
 import { useFilters } from "../hooks/useFilters.js"
+import "./filters.css"
 
 export function Filters() {
 
@@ -26,7 +27,7 @@ export function Filters() {
             <section className="filters">
                 <div>
                 <label htmlFor={categoryId}></label>
-                <select id={categoryId} 
+                <select id={categoryId} className="filter-select"
                     onChange={handleCategoryChange}
                 >
                     <option value={'all'}> Todo</option>
@@ -37,7 +38,7 @@ export function Filters() {
                 </div>
                 <div>
                     <label htmlFor={minPriceId}></label>
-                    <input type="range" id={minPriceId}
+                    <input type="range" id={minPriceId} className="filter-range"
                     value={filters.minPrice}
                     min={0}
                     max={250}

@@ -21,9 +21,12 @@
 
   /* Modo oscuro */
   --color-dark-bg: rgba(109, 77, 161, 0.726);      
-  --color-dark-card: rgba(55, 72, 95, 1);     
-  --color-dark-text: rgba(243, 244, 246, 1);    
-
+  --color-dark-card: rgb(27, 53, 90);     
+  --color-dark-text: rgba(243, 244, 246, 1);  
+  
+  --color-dark-button: rgb(138, 7, 143);
+  --color-dark-cartbg: rgba(55, 72, 95, 0.849);
+  --color-light-btn: rgba(69, 153, 83, 0.849);
 }
 
 

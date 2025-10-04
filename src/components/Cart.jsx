@@ -16,6 +16,7 @@ export function Cart() {
             <label htmlFor={cartButtonCheckedId} className="show-cart">Carrito</label>
             <section className="cartItems-display">
                 <span><h4>Coste total {total.toFixed(2)}€</h4></span>
+                <span><button type="button" onClick={() => deleteAllFromCart(currentUser.id)}>Delete All</button></span> 
                 {
                     
                     cart.map((item) => {
@@ -26,7 +27,7 @@ export function Cart() {
                         )
                     })
                 }
-                <span><button className="deleteAll-btn" type="button" onClick={() => deleteAllFromCart(currentUser.id)}>Delete All</button></span> 
+                
             </section>
         </>
     )

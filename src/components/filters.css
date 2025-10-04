@@ -1,0 +1,47 @@
+.filter-select {
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    outline: 1px solid #000000;
+    font-size: 1rem;
+    background-color: rgba(255, 255, 255, 0.404);
+    margin-top: 0.5rem;
+}
+
+.filter-select:hover {
+    outline: 1px solid rgb(19, 219, 209);
+    background-color: #f5f5f5;
+}
+
+.filter-range {
+  -webkit-appearance: none;
+  appearance: none;
+  margin: 0.5rem;
+  height: 10px;
+  background: #4a6ad4;
+  border-radius: 2px;
+  outline: .5px solid rgba(255, 255, 255, 0.404);
+  transition: background 0.3s;
+}
+
+.filter-range:hover {
+    background: #ccc;
+    cursor: pointer;
+}
+
+.filter-range:hover::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 15px;
+  height: 15px;
+  background: #009ffd; 
+  border-radius: 50%;
+  border: 2px solid white;
+  box-shadow: 0 0 4px rgba(0,0,0,0.3);
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+/* Hover */
+.filter-range:hover::-webkit-slider-thumb:hover {
+  background: #0077cc;
+}

@@ -19,7 +19,9 @@ export function Shop() {
                         filteredProducts.map((item) => {
                             return (
                             <div key={item.id}>
-                                <p>{item.nombre} --- {item.precio}</p><button type="button" onClick={() => {addNewItemToCart(currentUser.id, item)}}>Add to cart</button>
+                                <p>{item.nombre}</p>
+                                <p>{item.precio}€</p>
+                                <button type="button" onClick={() => {addNewItemToCart(currentUser.id, item)}}>Add to cart</button>
                             </div>
                             )
                         })
